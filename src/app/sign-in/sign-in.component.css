@@ -1,0 +1,14 @@
+.loginform{
+    text-align: center;
+    margin-left: 100px;
+    height: 60%;
+    width: 30%;
+    background-color: rgb(127, 164, 231);
+}
+mat-form-field {
+    padding: 10px;
+    width: 90%;
+}
+mat-raised-button {
+    width: 80%;
+}
