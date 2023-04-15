@@ -7,10 +7,22 @@ import { Injectable } from '@angular/core';
 export class DataServiceService {
 
   url='http://localhost:3000/';
-  constructor(private http:HttpClient) { }
+  endPoint: any;
+
+  Data: any;
+  constructor(private http:HttpClient) {
+    
+
+   }
 
   postApiCall(endPoint:any,data:any){
     let updateUrl = this.url + endPoint;
     return this.http.post(updateUrl , data)
    }
+   getApiCallData(endPoint:any){
+    let updateUrl = this.url + endPoint;
+   return this.http.get(updateUrl);
+  }
+
+  
 }

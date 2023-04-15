@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
+import { LoginsuccessComponent } from './admin/loginsuccess/loginsuccess.component';
 import { HomeComponent } from './home/home.component';
 import { OwnerComponent } from './owner/owner.component';
 import { SignInComponent } from './sign-in/sign-in.component';
@@ -14,9 +15,12 @@ const routes: Routes = [
   {path: 'user', component:UserComponent},
   { path:'signup',component:SignUpComponent},
   {path : 'signin', component:SignInComponent},
+  {path:'loginsuccess',component:LoginsuccessComponent},
+
+
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
-  { path: 'admin', loadChildren: () => import('./owner/owner.module').then(m => m.OwnerModule) },
-  { path: 'admin', loadChildren: () => import('./user/user.module').then(m => m.UserModule) }
+  { path: 'owner', loadChildren: () => import('./owner/owner.module').then(m => m.OwnerModule) },
+  { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule) }
 ];
 
 @NgModule({

@@ -5,11 +5,13 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
+import { LoginsuccessComponent } from './loginsuccess/loginsuccess.component';
 
 
 @NgModule({
   declarations: [
-    AdminComponent
+    AdminComponent,
+    LoginsuccessComponent
   ],
   imports: [
     CommonModule,

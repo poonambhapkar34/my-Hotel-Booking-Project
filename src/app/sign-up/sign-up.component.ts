@@ -34,9 +34,10 @@ signUp(){
     city:['',[Validators.required]]
 
   })
+  
 }
 submit(){
-  let endpoint = 'admin';
+   let endpoint = 'admin';
   this.dataservice.postApiCall(endpoint,this.signUpForm.value).subscribe(response =>{})
 
   
