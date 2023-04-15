@@ -1,8 +1,10 @@
 .loginform{
     text-align: center;
-    margin-left: 100px;
+    margin : auto;
     height: 60%;
     width: 30%;
+    position: relative;
+    top:150px;
     background-color: rgb(127, 164, 231);
 }
 mat-form-field {

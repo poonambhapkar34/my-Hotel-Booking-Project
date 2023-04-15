@@ -14,6 +14,8 @@ export class HomeComponent {
   }
   journey(Data:any){
     this.dataservice.endPoint = Data;
+    console.log("service endpoint", this.dataservice.endPoint);
+    
     if( Data === 'admin'){
       this.router.navigateByUrl('/admin')
     }

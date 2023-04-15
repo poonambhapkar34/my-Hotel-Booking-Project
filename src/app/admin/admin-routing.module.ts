@@ -7,8 +7,8 @@ import { LoginsuccessComponent } from './loginsuccess/loginsuccess.component';
 
 const routes: Routes = [
   { path: '', component: AdminComponent },
-  { path: 'signup', component:SignUpComponent},
-  { path : 'signin', component:SignInComponent},
+  { path: 'signUp', component:SignUpComponent},
+  { path : 'signIn', component:SignInComponent},
   { path:'loginsuccess',component:LoginsuccessComponent}
 
 ];

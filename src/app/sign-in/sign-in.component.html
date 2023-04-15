@@ -1,22 +1,26 @@
-<p>sign-in works!</p>
+<button mat-raised-button color="warn" (click)="back()">Back</button>
 <form class="loginform" [formGroup]="loginform">
-    <h2>Login Form </h2>
-<mat-form-field>
-    <mat-label>UserName</mat-label>
-      <input matInput  formControlName="username" >
-      <mat-error *ngIf="loginform.get('username')?.touched && loginform.get('username')?.errors?.['required']">Name is Required</mat-error>
-      <mat-error *ngIf="loginform.get('username')?.errors?.['minlength']">minimun 2 charactors Required</mat-error>
-      <mat-error *ngIf="loginform.get('username')?.errors?.['pattern']">Please Enter Alphabets Only</mat-error>
-</mat-form-field>
-<br>
-<mat-form-field>
-    <mat-label>Password</mat-label>
-      <input matInput  formControlName="password" >
-      <mat-error *ngIf="loginform.get('password')?.touched && loginform.get('password')?.errors?.['required']">Please Enter Password</mat-error>
+  <h2>Login Form </h2>
 
-</mat-form-field>
-<br>
-<button mat-raised-button color="primary" [disabled]="loginform.invalid" (click)="submit()">Submit</button><br>
-<a routerLink="/signup">Not Have Account Click Here</a>
+  <mat-form-field>
+    <mat-label>UserName</mat-label>
+    <input matInput formControlName="username">
+    <mat-error *ngIf="loginform.get('username')?.touched && loginform.get('username')?.errors?.['required']">Name is
+      Required</mat-error>
+    <mat-error *ngIf="loginform.get('username')?.errors?.['minlength']">minimun 2 charactors Required</mat-error>
+    <mat-error *ngIf="loginform.get('username')?.errors?.['pattern']">Please Enter Alphabets Only</mat-error>
+  </mat-form-field>
+  <br>
+  
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput formControlName="password">
+    <mat-error *ngIf="loginform.get('password')?.touched && loginform.get('password')?.errors?.['required']">Please
+      Enter Password</mat-error>
+  </mat-form-field>
+  <br>
+
+  <button mat-raised-button color="primary" [disabled]="loginform.invalid" (click)="submit()">Submit</button><br>
+  <a routerLink="/signUp">Not Have an Account Click Here</a>
 
 </form>

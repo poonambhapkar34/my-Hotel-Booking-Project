@@ -10,12 +10,13 @@ import { UserComponent } from './user/user.component';
 
 const routes: Routes = [ 
   {path: '', component:HomeComponent},
-  {path :'admin',component:AdminComponent},
-  {path :'owner',component:OwnerComponent},
-  {path: 'user', component:UserComponent},
-  { path:'signup',component:SignUpComponent},
-  {path : 'signin', component:SignInComponent},
-  {path:'loginsuccess',component:LoginsuccessComponent},
+  {path: 'home', component:HomeComponent},
+  // {path :'admin',component:AdminComponent},
+  // {path :'owner',component:OwnerComponent},
+  // {path: 'user', component:UserComponent},
+  { path:'signUp',component:SignUpComponent},
+  {path : 'signIn', component:SignInComponent},
+ // {path:'loginsuccess',component:LoginsuccessComponent},
 
 
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },

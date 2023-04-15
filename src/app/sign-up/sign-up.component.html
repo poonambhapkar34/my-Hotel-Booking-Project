@@ -1,71 +1,78 @@
-
-
-
-<form class="signupform " [formGroup]="signUpForm" >
+<button mat-raised-button color="warn" (click)="back()">Back</button>
+<form class="signupform " [formGroup]="signUpForm">
   <h1>Sign Up Form </h1> <br>
-    <mat-form-field >
-      <mat-label>Name</mat-label>
-      <input matInput type="text" formControlName="name" >
-    <mat-error *ngIf="signUpForm.get('name')?. touched && signUpForm.get('name')?.errors?.['required']  "> Name is required</mat-error>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput type="text" formControlName="name">
+    <mat-error *ngIf="signUpForm.get('name')?. touched && signUpForm.get('name')?.errors?.['required']  "> Name is
+      required</mat-error>
     <mat-error *ngIf="signUpForm.get('name')?.errors?.['pattern']  "> please enter alphabets only</mat-error>
     <mat-error *ngIf="signUpForm.get('name')?.errors?.['minlength'] "> Minimum 3 Charactors required</mat-error>
 
-    </mat-form-field><br>
-  
-    <mat-form-field >
-      <mat-label>MobileNo</mat-label>
-     <input matInput type="text" formControlName="mobile">
-    <mat-error *ngIf="signUpForm.get('mobile')?. touched && signUpForm.get('mobile')?.errors?.['required']  "> Mobile No is required</mat-error>
-    <mat-error *ngIf="signUpForm.get('mobile')?.errors?.['minlength'] "> please enter 10 digits mobile number</mat-error>
-    <mat-error *ngIf="signUpForm.get('mobile')?.errors?.['pattern']  "> please enter Valid Format </mat-error>
-    </mat-form-field><br>
+  </mat-form-field><br>
 
-    <mat-form-field >
-        <mat-label>Email Id</mat-label>
-       <input matInput type="email" formControlName="email" >
-       <mat-error *ngIf="signUpForm.get('email')?.errors?.['required']  "> Please Enter Email Id</mat-error>
-      </mat-form-field>
-<!-- 
+  <mat-form-field>
+    <mat-label>MobileNo</mat-label>
+    <input matInput type="text" formControlName="mobile">
+    <mat-error *ngIf="signUpForm.get('mobile')?. touched && signUpForm.get('mobile')?.errors?.['required']  "> Mobile No
+      is required</mat-error>
+    <mat-error *ngIf="signUpForm.get('mobile')?.errors?.['minlength'] "> please enter 10 digits mobile
+      number</mat-error>
+    <mat-error *ngIf="signUpForm.get('mobile')?.errors?.['pattern']  "> please enter Valid Format </mat-error>
+  </mat-form-field><br>
+
+  <mat-form-field>
+    <mat-label>Email Id</mat-label>
+    <input matInput type="email" formControlName="email">
+    <mat-error *ngIf="signUpForm.get('email')?.errors?.['required']  "> Please Enter Email Id</mat-error>
+  </mat-form-field>
+  <!-- 
       <mat-radio-group aria-label= Gender>
         <input  type="radio" value="male" formControlName="gender" name="gender">Male
         <input  type="radio" value="female"formControlName="gender" name="gender">Female
       </mat-radio-group> <br>
       <br> -->
-      
-      <mat-radio-group formControlName="gender" ><br>
-        <mat-radio-button value="male">Male</mat-radio-button>
-        <mat-radio-button value="female">Female</mat-radio-button>
-      </mat-radio-group>
-      <br>
 
-      <mat-form-field >
-        <mat-label>City</mat-label>
-       <input matInput  formControlName="city">
-       <mat-error *ngIf="signUpForm.get('city')?.errors?.['required']  "> Please Enter City Name</mat-error>
+  <mat-radio-group formControlName="gender"><br>
+    <mat-radio-button value="male">Male</mat-radio-button>
+    <mat-radio-button value="female">Female</mat-radio-button>
+  </mat-radio-group>
+  <br>
 
-      </mat-form-field><br>
+  <mat-form-field>
+    <mat-label>City</mat-label>
+    <input matInput formControlName="city">
+    <mat-error *ngIf="signUpForm.get('city')?.errors?.['required']  "> Please Enter City Name</mat-error>
 
-      <mat-form-field >
-        <mat-label>Password</mat-label>
+  </mat-form-field><br>
 
-       <input matInput [type]="showPassword ? 'text' : 'password'"  formControlName="Password" (keyup)="passwordValidation($event)">
-       <mat-icon matSuffix (click)="visiblity()">visibility</mat-icon>
-       <!-- <mat-error *ngIf="passMatch">Password Not Match</mat-error> -->
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput [type]="showPassword ? 'text' : 'password'"
+     formControlName="Password"
+      (keyup)="passwordValidation($event)">
+    <mat-icon matSuffix (click)="visiblity()">visibility</mat-icon>
+  </mat-form-field>
+  <span *ngIf="passwordMatch">
+    <mat-error>Password Not Match</mat-error>
+  </span>
+  <mat-error *ngIf="signUpForm.get('Password')?. touched  &&signUpForm.get('Password')?.errors?.['required']  "> Password is required</mat-error>
+  <br>
 
-       <mat-error *ngIf="signUpForm.get('Password')?.errors?.['required']  "> Password is required</mat-error>
+  <mat-form-field>
+    <mat-label>Confirm Password</mat-label>
+    <input matInput [type]="showConfirmPassword ? 'text' : 'password'" formControlName="confirmPassword"
+      (keyup)="confirmpasswordValidation($event)">
+    <mat-icon matSuffix (click)="showConfirmPassword =!showConfirmPassword">visibility</mat-icon>
+  </mat-form-field>
+  <span *ngIf="passwordMatch">
+    <mat-error>Password Not Match</mat-error>
+  </span><br>
 
-      </mat-form-field> <br>
+  <mat-checkbox formControlName="TnC">Accept Terms And Conditions</mat-checkbox> <br>
 
-      <mat-form-field >
-        <mat-label>Confirm Password</mat-label>
-       <input matInput [type]="showPassword ? 'text' : 'password'"  formControlName="confirmPassword" (keyup)=" confirmpasswordValidation($event)">
-      <mat-icon matSuffix (click)="visiblity()">visibility</mat-icon>
-     </mat-form-field>
-     <span style=color:red  *ngIf="passMatch">Password Not Match</span><br>
-      <mat-checkbox formControlName="TnC">Accept Terms And Conditions</mat-checkbox> <br>
+  <button mat-raised-button color="warn" [disabled]="!signUpForm.valid" (click)="submit()">Submit</button>
 
-      <button  mat-raised-button color="warn" [disabled]="!signUpForm.valid" (click)="submit()">Submit</button>
-      
-        
-    
-  </form>
+
+
+</form>

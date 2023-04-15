@@ -1,0 +1,103 @@
+{
+  "admin": [
+    {
+      "name": "Damodhar",
+      "mobile": "9763330729",
+      "Password": "damo5120",
+      "confirmPassword": "damo5120",
+      "TnC": true,
+      "gender": "male",
+      "email": "maskedamodhar@gmail.com",
+      "city": "Pune",
+      "id": 1
+    },
+    {
+      "name": "Shivansh",
+      "mobile": "9763330730",
+      "Password": "shiv1234",
+      "confirmPassword": "shiv1234",
+      "TnC": true,
+      "gender": "male",
+      "email": "maskedamodhar@gmail.com",
+      "city": "mumbai",
+      "id": 2
+    },
+    {
+      "name": "poonam",
+      "mobile": "8796333333",
+      "Password": "poonam1234",
+      "confirmPassword": "poonam1234",
+      "TnC": true,
+      "gender": "female",
+      "email": "poonam@gmail.com",
+      "city": "mumbai",
+      "id": 3
+    },
+    {
+      "name": "Pooja",
+      "mobile": "8779180087",
+      "Password": "Pooja1234",
+      "confirmPassword": "Pooja1234",
+      "TnC": true,
+      "gender": null,
+      "email": "Pooja4@gmail.com",
+      "city": "Mumbai",
+      "id": 4
+    },
+    {
+      "name": "shiyansh",
+      "mobile": "9899999999",
+      "Password": "shiyansh1234",
+      "confirmPassword": "shiyansh1234",
+      "TnC": true,
+      "gender": "male",
+      "email": "shiyansh@gmail.com",
+      "city": "pune",
+      "id": 5
+    },
+    {
+      "name": "OmSai",
+      "mobile": "8779180087",
+      "Password": "Om123456",
+      "confirmPassword": "Om123456",
+      "TnC": true,
+      "gender": "male",
+      "email": "Om34@gmail.com",
+      "city": "Mumbai",
+      "id": 6
+    },
+    {
+      "name": "shree",
+      "mobile": "8779180087",
+      "Password": "shree1234",
+      "confirmPassword": "shree1234",
+      "TnC": true,
+      "gender": "male",
+      "email": "shree@gmail.com",
+      "city": "Mumbai",
+      "id": 7
+    },
+    {
+      "name": "Jiya",
+      "mobile": "8779180087",
+      "Password": "Jiya1234",
+      "confirmPassword": "Jiya1234",
+      "TnC": true,
+      "gender": "female",
+      "email": "Jiya@gmail.com",
+      "city": "Mumbai",
+      "id": 8
+    },
+    {
+      "name": "nitish",
+      "mobile": "4444556666",
+      "Password": "nitish123",
+      "confirmPassword": "nitish123",
+      "TnC": true,
+      "gender": "male",
+      "email": "nitish@gmail.com",
+      "city": "nashik",
+      "id": 9
+    }
+  ]
+}

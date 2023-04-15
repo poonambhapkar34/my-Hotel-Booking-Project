@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
 import { DataServiceService } from '../data-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -9,15 +10,20 @@ import { DataServiceService } from '../data-service.service';
 })
 export class SignUpComponent {
   showPassword: boolean= false;
- signUpForm! : FormGroup;
- passMatch: boolean = false;
+  showConfirmPassword: boolean= false;
+  signUpForm! : FormGroup;
+  passwordMatch: boolean = false;
   password: any;
   confirmPassword: any;
-constructor(private fb :FormBuilder , private dataservice:DataServiceService){
+  confirmPasswordMatch: boolean = false;
+  endPoint: any;
+constructor(private fb :FormBuilder ,
+  private router : Router, private dataservice:DataServiceService){
  
 }
 
 ngOnInit(){
+ this.endPoint = this.dataservice.endPoint
   this.signUp();
   
 }
@@ -26,7 +32,7 @@ signUp(){
     // name:['',[Validators.required]]
     name:['',[Validators.required,Validators.minLength(3),Validators.pattern('[A-Za-z]*')]],
     mobile:['',[ Validators.required, Validators.minLength(10),Validators.pattern('[0-9]*'),Validators.maxLength(10)]],
-    Password:['',[Validators.required,Validators.minLength(8),Validators.pattern('[a-z0-9@#$-]*$')]],
+    Password:['',[Validators.required,Validators.minLength(8),Validators.pattern('[A-Za-z0-9]*$')]],
     confirmPassword:['',[Validators.required]],
     TnC:   ['', [Validators.requiredTrue]],
     gender:[],
@@ -37,11 +43,20 @@ signUp(){
   
 }
 submit(){
-   let endpoint = 'admin';
-  this.dataservice.postApiCall(endpoint,this.signUpForm.value).subscribe(response =>{})
-
   
-  console.log(this.signUpForm.value);
+  this.dataservice.postApiCall(this.endPoint,this.signUpForm.value).subscribe(response =>{})
+  
+  this.dataservice.signinOrSignUp = 'signUp';
+
+  if (this.endPoint == 'admin') {
+    this.router.navigateByUrl('/admin/loginsuccess')
+  }
+  else if (this.endPoint == 'owner') {
+    this.router.navigateByUrl('/owner/loginsuccess')
+  }
+  else {
+    this.router.navigateByUrl('/user/loginsuccess')
+  }
   
 }
 visiblity(){
@@ -52,10 +67,10 @@ passwordValidation(pass:any){
   console.log('password',pass.target.value);
   
   if(this.password == this.confirmPassword  ){
-    this.passMatch = false;
+    this.passwordMatch = false;
   }
   else{
-   this.passMatch = true;
+   this.passwordMatch = true;
   }
 }
 
@@ -64,11 +79,14 @@ confirmpasswordValidation(confirmpass:any){
   console.log('confirm', confirmpass.target.value);
   
   if(this.password == this.confirmPassword  ){
-    this.passMatch = false;
+    this.passwordMatch = false;
   }
   else{
-   this.passMatch = true;
+   this.passwordMatch = true;
   }
+}
+back(){
+this.router.navigateByUrl('/signIn');
 }
 
 }
