@@ -7,11 +7,12 @@ import { Injectable } from '@angular/core';
 export class DataServiceService {
 
   url='http://localhost:3000/';
- // endPoint: any;
- endPoint = 'admin';
+  endPoint: any;
+ //endPoint = 'admin';
 
   Data: any;
   signinOrSignUp: any;
+  ownerName: any;
   constructor(private http:HttpClient) {
     
 
