@@ -28,7 +28,7 @@ export class SignInComponent {
   }
   login() {
     this.loginform = this.fb.group({
-      username: ['', [Validators.required, Validators.minLength(2), Validators.pattern("[a-zA-Z]*$")]],
+      name: ['', [Validators.required, Validators.minLength(2), Validators.pattern("[a-zA-Z]*$")]],
       password: ['', [Validators.required]]
     })
   }
@@ -38,20 +38,22 @@ export class SignInComponent {
     this.getApiData = await this.dataservice.getApiCallData(this.endPoint).toPromise();
 
     let loginData = this.getApiData.find((ele: any) => {
-      return ele.name === this.loginform.value.username && ele.Password === this.loginform.value.password
+      return ele.name === this.loginform.value.name && ele.Password === this.loginform.value.password
     })
     if (loginData) {
       this.dataservice.signinOrSignUp = 'signIn';
+      
       if (this.endPoint == 'admin') {
         alert('login successfully');
-        this.router.navigateByUrl('/admin/loginsuccess')
+        this.router.navigateByUrl('/admin/loginSuccess')
       }
       else if (this.endPoint == 'owner') {
         alert('login successfully');
-        this.router.navigateByUrl('/owner/loginsuccess')
+        this.dataservice.ownerName = this.loginform.value.name;
+        this.router.navigateByUrl('/owner/loginSuccess')
       }
       else {
-        this.router.navigateByUrl('/user/loginsuccess')
+        this.router.navigateByUrl('/user/loginSuccess')
       }
     }
     else {

@@ -49,13 +49,13 @@ submit(){
   this.dataservice.signinOrSignUp = 'signUp';
 
   if (this.endPoint == 'admin') {
-    this.router.navigateByUrl('/admin/loginsuccess')
+    this.router.navigateByUrl('/admin/loginSuccess')
   }
   else if (this.endPoint == 'owner') {
-    this.router.navigateByUrl('/owner/loginsuccess')
+    this.router.navigateByUrl('/owner/loginSuccess')
   }
   else {
-    this.router.navigateByUrl('/user/loginsuccess')
+    this.router.navigateByUrl('/user/loginSuccess')
   }
   
 }

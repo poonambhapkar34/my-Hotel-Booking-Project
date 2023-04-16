@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '', component: AdminComponent },
   { path: 'signUp', component:SignUpComponent},
   { path : 'signIn', component:SignInComponent},
-  { path:'loginsuccess',component:LoginsuccessComponent}
+  { path:'loginSuccess',component:LoginsuccessComponent}
 
 ];
 

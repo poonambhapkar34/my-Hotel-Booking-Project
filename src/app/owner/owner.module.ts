@@ -3,15 +3,21 @@ import { CommonModule } from '@angular/common';
 
 import { OwnerRoutingModule } from './owner-routing.module';
 import { OwnerComponent } from './owner.component';
-
+import { LoginsuccessComponent } from './loginsuccess/loginsuccess.component';
+import { SharedModule } from '../shared/shared.module';
+import { HotelRegistrationComponent } from './hotel-registration/hotel-registration.component';
 
 @NgModule({
   declarations: [
-    OwnerComponent
+    OwnerComponent,
+    LoginsuccessComponent,
+    HotelRegistrationComponent
   ],
   imports: [
     CommonModule,
-    OwnerRoutingModule
+    OwnerRoutingModule,
+    SharedModule
+   
   ]
 })
 export class OwnerModule { }

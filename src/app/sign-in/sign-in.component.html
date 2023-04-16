@@ -4,11 +4,11 @@
 
   <mat-form-field>
     <mat-label>UserName</mat-label>
-    <input matInput formControlName="username">
-    <mat-error *ngIf="loginform.get('username')?.touched && loginform.get('username')?.errors?.['required']">Name is
+    <input matInput formControlName="name">
+    <mat-error *ngIf="loginform.get('name')?.touched && loginform.get('name')?.errors?.['required']">Name is
       Required</mat-error>
-    <mat-error *ngIf="loginform.get('username')?.errors?.['minlength']">minimun 2 charactors Required</mat-error>
-    <mat-error *ngIf="loginform.get('username')?.errors?.['pattern']">Please Enter Alphabets Only</mat-error>
+    <mat-error *ngIf="loginform.get('name')?.errors?.['minlength']">minimun 2 charactors Required</mat-error>
+    <mat-error *ngIf="loginform.get('name')?.errors?.['pattern']">Please Enter Alphabets Only</mat-error>
   </mat-form-field>
   <br>
   

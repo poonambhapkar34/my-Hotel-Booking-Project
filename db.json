@@ -99,5 +99,198 @@
       "city": "nashik",
       "id": 9
     }
-  ]
+  ],
+  "owner": [
+    {
+      "name": "poonam",
+      "mobile": "8779180087",
+      "Password": "poonam123",
+      "confirmPassword": "poonam123",
+      "TnC": true,
+      "gender": "female",
+      "email": "poonambhapkar34@gmail.com",
+      "city": "Mumbai",
+      "id": 1
+    },
+    {
+      "name": "Sheetal",
+      "mobile": "8979180087",
+      "Password": "Sheetal12",
+      "confirmPassword": "Sheetal12",
+      "TnC": true,
+      "gender": "female",
+      "email": "Sheetal@gmail.com",
+      "city": "Mumbai",
+      "id": 2
+    },
+    {
+      "name": "Shreeya",
+      "mobile": "4567890343",
+      "Password": "Shreeya12",
+      "confirmPassword": "Shreeya12",
+      "TnC": true,
+      "gender": "female",
+      "email": "Shreeya@gmail.com",
+      "city": "pune",
+      "id": 3
+    },
+    {
+      "name": "pooja",
+      "mobile": "9979180087",
+      "Password": "pooja123",
+      "confirmPassword": "pooja123",
+      "TnC": true,
+      "gender": "female",
+      "email": "pooja@gmail.com",
+      "city": "Mumbai",
+      "id": 4
+    },
+    {
+      "name": "Santosh",
+      "mobile": "9979180087",
+      "Password": "Santosh123",
+      "confirmPassword": "Santosh123",
+      "TnC": true,
+      "gender": "male",
+      "email": "Santosh@gmail.com",
+      "city": "Mumbai",
+      "id": 5
+    }
+  ],
+  "user": [],
+  "hotelDetails": [
+    {
+      "ownerName": "Santosh",
+      "hotelName": "Oscarwadi",
+      "hotelAddress": "Mumbai",
+      "hotelMobile": "8787875557",
+      "hotelMenu": "Uttapas",
+      "roomAvailable": "07",
+      "owenrCheck": true,
+      "userPass": "12345678",
+      "id": 2
+    },
+    {
+      "ownerName": "Sagar",
+      "hotelName": "Paradise",
+      "hotelAddress": "Nashik",
+      "hotelMobile": "8787878787",
+      "hotelMenu": "Dosa",
+      "roomAvailable": "10",
+      "owenrCheck": true,
+      "userPass": "12345678",
+      "id": 3
+    },
+    {
+      "ownerName": "Santosh",
+      "hotelName": "Dharmaraj",
+      "hotelAddress": "Maval,Pune",
+      "hotelMobile": "8787878787",
+      "hotelMenu": "Hot Beverages",
+      "roomAvailable": "07",
+      "owenrCheck": true,
+      "userPass": "12345678",
+      "id": 4
+    },
+    {
+      "ownerName": "Santosh",
+      "hotelName": "Jagdanb",
+      "hotelAddress": "Paithan",
+      "hotelMobile": "8787878787",
+      "hotelMenu": "Rice",
+      "roomAvailable": "07",
+      "owenrCheck": true,
+      "userPass": "12345678",
+      "id": 5
+    },
+    {
+      "ownerName": "Sagar",
+      "hotelName": "Jagdanb",
+      "hotelAddress": "Munbai",
+      "hotelMobile": "8787878787",
+      "hotelMenu": "Fish Pulav",
+      "roomAvailable": "07",
+      "owenrCheck": true,
+      "userPass": "12345678",
+      "id": 6
+    },
+    {
+      "ownerName": "Santosh",
+      "hotelName": "Rajveer",
+      "hotelAddress": "Pune",
+      "hotelMobile": "9766725698",
+      "hotelMenu": "Shahi Panir",
+      "roomAvailable": "03",
+      "owenrCheck": true,
+      "userPass": "12345678",
+      "id": 7
+    },
+    {
+      "ownerName": "Sagar",
+      "hotelName": "5 star",
+      "hotelAddress": "Ahmadnagar",
+      "hotelMobile": "9860908876",
+      "hotelMenu": "Paneer",
+      "roomAvailable": "10",
+      "owenrCheck": true,
+      "userPass": "12345678",
+      "id": 8
+    },
+    {
+      "ownerName": "Sagar",
+      "hotelName": "7 star",
+      "hotelAddress": "Pune",
+      "hotelMobile": "9860908876",
+      "hotelMenu": "Paneer Tikka",
+      "roomAvailable": "10",
+      "owenrCheck": true,
+      "userPass": "12345678",
+      "id": 9
+    },
+    {
+      "ownerName": "Yogesh",
+      "hotelName": "samarth",
+      "hotelAddress": "Pategaon",
+      "hotelMobile": "9860908876",
+      "hotelMenu": "Rice",
+      "roomAvailable": "10",
+      "owenrCheck": true,
+      "userPass": "12345678",
+      "id": 10
+    },
+    {
+      "ownerName": "Santosh",
+      "hotelName": "5 star",
+      "hotelAddress": "Ahmadnagar",
+      "hotelMobile": "9860908876",
+      "hotelMenu": "Paneer",
+      "roomAvailable": "10",
+      "owenrCheck": true,
+      "userPass": "12345678",
+      "id": 11
+    },
+    {
+      "ownerName": "Abhijeet",
+      "hotelName": "Hotel Plasa",
+      "hotelAddress": "Malkapur",
+      "hotelMobile": "9860908859",
+      "hotelMenu": "Rice",
+      "roomAvailable": "09",
+      "owenrCheck": true,
+      "userPass": "12121212",
+      "id": 12
+    },
+    {
+      "ownerName": "Anushka",
+      "hotelName": "AnshRaj Hotel",
+      "hotelAddress": "Nepti Naka ,Beed.",
+      "hotelMobile": "9832983888",
+      "hotelMenu": "Dal Tadka",
+      "roomAvailable": "02",
+      "owenrCheck": true,
+      "userPass": "12312312",
+      "id": 13
+    }
+  ],
+  "hotelBooking": []
 }

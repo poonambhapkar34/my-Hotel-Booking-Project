@@ -1,0 +1,16 @@
+<button mat-raised-button color="warn" (click)="back()">Back</button>
+<button mat-raised-button color="warn" routerLink="/owner/hotelRegistration">Hotel Registration</button>
+<button mat-raised-button color="warn" (click)="viewHotels()">View Hotels</button>
+<!-- to do table -->
+
+<div *ngIf="this.hotelDetailsByOwner">
+<ul *ngFor="let hotelData of this.hotelDetailsByOwner">
+    <li>{{hotelData.ownerName}}</li>
+    <li>{{hotelData.hotelName}}</li>
+    <li>{{hotelData.hotelAddress}}</li>
+    <li>{{hotelData.hotelMobile}}</li>
+    <li>{{hotelData.hotelMenu}}</li>
+    <li>{{hotelData.roomAvailable}}</li>
+    
+</ul>
+</div>
