@@ -22,7 +22,7 @@ export class DataServiceService {
     let updateUrl = this.url + endPoint;
     return this.http.post(updateUrl , data)
    }
-   getApiCallData(endPoint:any){
+   getApiCall(endPoint:any){
     let updateUrl = this.url + endPoint;
    return this.http.get(updateUrl);
   }

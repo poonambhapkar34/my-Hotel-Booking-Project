@@ -34,7 +34,7 @@ export class LoginsuccessComponent {
   }
   async viewHotels(){
 
-  this.hotelDetails = await this.dataservice.getApiCallData('hotelDetails').toPromise();
+  this.hotelDetails = await this.dataservice.getApiCall('hotelDetails').toPromise();
   console.log(" this.hotelDetails ", this.hotelDetails );
   
   if(this.hotelDetails){

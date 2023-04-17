@@ -1,0 +1,26 @@
+<div>
+    <table>
+    
+    <!-- <tr *ngFor="let heading of tableHeadings">
+            <th>{{heading}}</th>
+    </tr> -->
+        <tr>
+            <th>ID</th>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Email</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Role</th>
+          </tr>
+    
+        <tr *ngFor="let hotelsData of hotelDetails" >
+            <td>{{hotelsData.ownerName}}</td>
+            <td>{{hotelsData.hotelAddress}}</td>
+            <td>{{hotelsData.hotelMobile}}</td>
+            <td>{{hotelsData.hotelMenu}}</td>
+        </tr>
+    
+    
+    </table>
+</div>

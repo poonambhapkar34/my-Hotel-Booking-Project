@@ -7,16 +7,15 @@ import { OwnerComponent } from './owner/owner.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { UserComponent } from './user/user.component';
+import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
 
 const routes: Routes = [ 
   {path: '', component:HomeComponent},
   {path: 'home', component:HomeComponent},
-  // {path :'admin',component:AdminComponent},
-  // {path :'owner',component:OwnerComponent},
-  // {path: 'user', component:UserComponent},
   { path:'signUp',component:SignUpComponent},
   {path : 'signIn', component:SignInComponent},
- // {path:'loginsuccess',component:LoginsuccessComponent},
+  { path : 'hotelDetails' , component: HotelDetailsComponent },
+
 
 
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },

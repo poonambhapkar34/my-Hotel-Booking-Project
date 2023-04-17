@@ -17,15 +17,16 @@ export class LoginsuccessComponent {
   ngOnInit(){
 
   this.endPoint = this.dataservice.endPoint;
-  this.signInOrSignUp =  this.dataservice.signinOrSignUp;
+
   console.log('this.signInOrSignUp --',this.signInOrSignUp );
  
   }
 
   viewHotelList(){
-
+    this.router.navigateByUrl('/hotelDetails');
   }
   back(){
+    this.signInOrSignUp =  this.dataservice.signinOrSignUp;
     if(this.signInOrSignUp =='signIn'){
       this.router.navigateByUrl('/signIn');
     }

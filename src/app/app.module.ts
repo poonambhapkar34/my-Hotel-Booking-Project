@@ -16,13 +16,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../../src/app/shared/shared.module';
+import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    HotelDetailsComponent
   ],
   imports: [
     BrowserModule,

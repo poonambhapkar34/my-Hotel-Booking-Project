@@ -35,7 +35,7 @@ export class SignInComponent {
 
   async submit() {
     console.log('login', this.loginform.value);
-    this.getApiData = await this.dataservice.getApiCallData(this.endPoint).toPromise();
+    this.getApiData = await this.dataservice.getApiCall(this.endPoint).toPromise();
 
     let loginData = this.getApiData.find((ele: any) => {
       return ele.name === this.loginform.value.name && ele.Password === this.loginform.value.password
