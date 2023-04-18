@@ -1,0 +1,7 @@
+div.btns button{
+   margin-left: 3px;
+}
+.btns{
+    position: relative;
+    top: 30px;
+}

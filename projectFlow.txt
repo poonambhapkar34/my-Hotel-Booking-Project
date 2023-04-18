@@ -109,7 +109,7 @@ owner SignIn: signin form details have to match.
 match-success with db details : match--> redirect owner to loginSucces screen,
 match-fail -->show alert box and redirect owner again to signIn screen.
 
-loginSucces- screen: Hotel Registration, view Hotel list
+loginSucces- screen: Hotel Registration,view my Hotel, list view Hotel list
  Hotel Registration  click--> (under ownerModule) Hotel_RegistrationComponent --> form {
       "ownerName"
       "owenerMobNo"

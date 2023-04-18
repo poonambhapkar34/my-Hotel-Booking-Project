@@ -32,7 +32,7 @@ export class LoginsuccessComponent {
       this.router.navigateByUrl('/signUp')
     }
   }
-  async viewHotels(){
+  async viewMyHotelList(){
 
   this.hotelDetails = await this.dataservice.getApiCall('hotelDetails').toPromise();
   console.log(" this.hotelDetails ", this.hotelDetails );
@@ -45,6 +45,9 @@ export class LoginsuccessComponent {
     });
   }
   console.log('this.hotelDetailsByOwner',this.hotelDetailsByOwner);
-  
+    }
+
+   viewAllHotelList(){
+   this.router.navigateByUrl('/hotelDetails')
   }
 }

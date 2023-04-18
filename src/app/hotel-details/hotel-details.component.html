@@ -1,26 +1,29 @@
-<div>
+
+
+<button mat-raised-button color="warn" (click)="back()">Back</button>
+<div class="serach-bar-container">
+    <mat-form-field>
+        <mat-icon matPrefix>search</mat-icon>
+        <input matInput [(ngModel)]="inputBoxValue">
+    </mat-form-field>
+</div>
+
+
+<div class="table-container">
+
     <table>
-    
-    <!-- <tr *ngFor="let heading of tableHeadings">
-            <th>{{heading}}</th>
-    </tr> -->
         <tr>
-            <th>ID</th>
-            <th>Last Name</th>
-            <th>First Name</th>
-            <th>Email</th>
-            <th>Username</th>
-            <th>Password</th>
-            <th>Role</th>
-          </tr>
-    
-        <tr *ngFor="let hotelsData of hotelDetails" >
+            <th *ngFor="let heading of tableHeadings">{{heading}}</th>
+            <th *ngIf="endpoint=='admin'">Delete</th>
+        </tr>
+        <tr *ngFor="let hotelsData of hotelDetails | searchtext:inputBoxValue">
             <td>{{hotelsData.ownerName}}</td>
+            <td>{{hotelsData.hotelName}}</td>
             <td>{{hotelsData.hotelAddress}}</td>
             <td>{{hotelsData.hotelMobile}}</td>
             <td>{{hotelsData.hotelMenu}}</td>
+            <td *ngIf="endpoint=='admin'"> <i class="material-icons" (click)="delete(hotelsData.id)">delete</i></td>
+           
         </tr>
-    
-    
     </table>
 </div>

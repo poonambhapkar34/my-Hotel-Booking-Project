@@ -1,7 +1,10 @@
-<button mat-raised-button color="warn" (click)="back()">Back</button>
+
+<div class="btns">
+<button mat-raised-button color="warn"  (click)="back()">Back</button>
 <button mat-raised-button color="warn" routerLink="/owner/hotelRegistration">Hotel Registration</button>
-<button mat-raised-button color="warn" (click)="viewHotels()">View Hotels</button>
-<!-- to do table -->
+<button mat-raised-button color="warn"  (click)="viewMyHotelList()">View My Hotel list</button>
+<button mat-raised-button color="warn" (click)="viewAllHotelList()">View All Hotel List</button>
+</div>
 
 <div *ngIf="this.hotelDetailsByOwner">
 <ul *ngFor="let hotelData of this.hotelDetailsByOwner">

@@ -98,6 +98,17 @@
       "email": "nitish@gmail.com",
       "city": "nashik",
       "id": 9
+    },
+    {
+      "name": "shiv",
+      "mobile": "4444456789",
+      "Password": "Shiv1234",
+      "confirmPassword": "Shiv1234",
+      "TnC": true,
+      "gender": "male",
+      "email": "shi@gmai.com",
+      "city": "pune",
+      "id": 10
     }
   ],
   "owner": [
@@ -161,29 +172,29 @@
   "hotelDetails": [
     {
       "ownerName": "Santosh",
-      "hotelName": "Oscarwadi",
-      "hotelAddress": "Mumbai",
-      "hotelMobile": "8787875557",
-      "hotelMenu": "Uttapas",
+      "hotelName": "Dharmaraj",
+      "hotelAddress": "Maval,Pune",
+      "hotelMobile": "8787878787",
+      "hotelMenu": "Hot Beverages",
       "roomAvailable": "07",
       "owenrCheck": true,
       "userPass": "12345678",
-      "id": 2
+      "id": 4
     },
     {
-      "ownerName": "Sagar",
-      "hotelName": "Paradise",
-      "hotelAddress": "Nashik",
+      "ownerName": "poonam",
+      "hotelName": "oberoy",
+      "hotelAddress": "Maval,Pune",
       "hotelMobile": "8787878787",
-      "hotelMenu": "Dosa",
-      "roomAvailable": "10",
+      "hotelMenu": "Hot Beverages",
+      "roomAvailable": "07",
       "owenrCheck": true,
       "userPass": "12345678",
-      "id": 3
+      "id": 4
     },
     {
-      "ownerName": "Santosh",
-      "hotelName": "Dharmaraj",
+      "ownerName": "poonam",
+      "hotelName": "Taj",
       "hotelAddress": "Maval,Pune",
       "hotelMobile": "8787878787",
       "hotelMenu": "Hot Beverages",

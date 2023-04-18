@@ -15,11 +15,8 @@ export class LoginsuccessComponent {
   private router :Router){}
 
   ngOnInit(){
-
   this.endPoint = this.dataservice.endPoint;
-
   console.log('this.signInOrSignUp --',this.signInOrSignUp );
- 
   }
 
   viewHotelList(){
