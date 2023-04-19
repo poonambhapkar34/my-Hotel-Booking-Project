@@ -1,0 +1,107 @@
+.login {
+    color: #fff;
+}
+
+.login a {
+    color: #e0eb0b;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.user-image {
+    height: 250px;
+    width: 150px;
+    padding-top: 5px;
+}
+
+body {
+    background-color: rgb(171, 219, 218);
+    height: 250%;
+    width: 100%;
+}
+
+.sign-up {
+    color: #fff;
+}
+
+.sign-up a {
+    color: #d39e00;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-card {
+    background: #c31432;
+    background: -webkit-linear-gradient(to right, #172061, #d32945);
+    background: linear-gradient(to right, #311262, #cb2f49);
+    border-radius: 5px;
+    box-shadow: 1px 1px 20px #24b929;
+    width: 565px;
+
+}
+
+.user-image {
+    height: 70px;
+    width: 70px;
+}
+
+label {
+    color: #fff;
+    font-weight: 700;
+}
+
+.auth-avatar {
+    text-align: center;
+    margin-top: -50px;
+}
+
+.auth {
+    margin-top: 35px;
+    border: none;
+    border-radius: 6px;
+}
+
+.text-right.forget-pass a {
+    font-size: 12px;
+    color: #d39e00;
+    text-decoration: none;
+}
+
+.btn-my {
+    background-color: #1f15aa;
+    border-color: #25231d;
+    color: #fff;
+}
+
+.simple-keyboard {
+    max-width: 850px;
+}
+
+mat-form-field {
+    padding: 8px;
+    width: 95%;
+}
+
+.errorMsg {
+    color: #c31432;
+    font-size: 14px;
+}
+
+
+
+.btn {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.form-Heading {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #e02a48;
+    text-shadow: 3px 2px rgb(76, 84, 198);
+    letter-spacing: 7px;
+    margin-left: 105px;
+}

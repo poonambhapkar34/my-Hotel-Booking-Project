@@ -18,7 +18,7 @@ export class DataServiceService {
 
   postApiCall(endPoint: any, data: any) {
     let updateUrl = this.url + endPoint;
-    return this.http.post(updateUrl, data)
+    return this.http.post(updateUrl, data);
   }
 
   getApiCall(endPoint: any) {

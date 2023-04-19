@@ -39,12 +39,20 @@ export class LoginsuccessComponent {
   
   if(this.hotelDetails){
     this.hotelDetails.forEach((element:any) => {
-      if(element.ownerName == this.ownerName ){
+      let name = element.ownerName?.toLowerCase();
+      console.log(name);
+      let signInName = this.ownerName?.toLowerCase() ;
+      if(name==signInName ){
         this.hotelDetailsByOwner.push(element);
       }
     });
+    console.log('this.hotelDetailsByOwner',this.hotelDetailsByOwner);
+    if(this.hotelDetailsByOwner <= 0){
+      alert('Hotels Not found....')
+    }
   }
-  console.log('this.hotelDetailsByOwner',this.hotelDetailsByOwner);
+ 
+  
     }
 
    viewAllHotelList(){

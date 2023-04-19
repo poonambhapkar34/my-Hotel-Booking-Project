@@ -157,7 +157,7 @@
       "id": 4
     },
     {
-      "name": "Santosh",
+      "name": "santosh",
       "mobile": "9979180087",
       "Password": "Santosh123",
       "confirmPassword": "Santosh123",
@@ -301,6 +301,54 @@
       "owenrCheck": true,
       "userPass": "12312312",
       "id": 13
+    },
+    {
+      "ownerName": "poonam",
+      "typeOfApplicant": "individual ownership",
+      "hotelName": "Taj hotel",
+      "hotelContact": "9899999992",
+      "HotelAddress": "Mumbai",
+      "pancard": "CTGPP3443P",
+      "city": "Mumbai",
+      "starRating": "5",
+      "hotelAsso": "No",
+      "hotelAssoList": "select",
+      "numberOfRooms": "11",
+      "noOfEmployes": "1",
+      "acceptTerms": true,
+      "id": 14
+    },
+    {
+      "ownerName": "poonam",
+      "typeOfApplicant": "company",
+      "hotelName": "Taj hotel",
+      "hotelContact": "9899999992",
+      "HotelAddress": "Mumbai",
+      "pancard": "CTGPP3443P",
+      "city": "Mumbai",
+      "starRating": "5",
+      "hotelAsso": "No",
+      "hotelAssoList": "select",
+      "numberOfRooms": "11",
+      "noOfEmployes": "1",
+      "acceptTerms": true,
+      "id": 15
+    },
+    {
+      "ownerName": "test22",
+      "typeOfApplicant": "company",
+      "hotelName": "test44",
+      "hotelContact": "34567890",
+      "HotelAddress": "ffdddd",
+      "pancard": "ASDFD4573U",
+      "city": "Mumbai",
+      "starRating": "3",
+      "hotelAsso": "No",
+      "hotelAssoList": "select",
+      "numberOfRooms": "2",
+      "noOfEmployes": "2",
+      "acceptTerms": true,
+      "id": 16
     }
   ],
   "hotelBooking": []
