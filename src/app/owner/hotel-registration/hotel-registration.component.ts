@@ -11,21 +11,35 @@ export class HotelRegistrationComponent {
   hotelRegistrationForm!: FormGroup;
   show: boolean = false;
   getEndPoint: any;
+  isEditJourney!: boolean;
+  editId!: number;
+  hotelEndPoint = 'hotelDetails';
+  hotelDetailsById: any;
   constructor(private formBuilder: FormBuilder,
-     private dataServiceService : DataServiceService,
-     private router: Router) {
+    private dataServiceService: DataServiceService,
+    private router: Router) {
 
   }
   ngOnInit() {
+    this.isEditJourney = this.dataServiceService.editJourney;
+    this.editId = this.dataServiceService.editId;
+    if (this.isEditJourney) {
+      this.getHotelDetailsById();
+    }
     this.hotelRegistration();
+  }
+
+  async getHotelDetailsById() {
+    this.hotelDetailsById = await this.dataServiceService.getApiCall(this.hotelEndPoint, this.editId).toPromise();
+console.log(' this.hotelDetailsById', this.hotelDetailsById);
 
   }
 
   hotelRegistration() {
     this.hotelRegistrationForm = this.formBuilder.group({
-      ownerName: ['', [Validators.required, Validators.minLength(5)]],
+      ownerName: [this.hotelDetailsById ? this.hotelDetailsById.ownerName : '', [Validators.required, Validators.minLength(5)]],
       typeOfApplicant: [''],
-      hotelName: ['', [Validators.required, Validators.minLength(5)]],
+      hotelName: [this.hotelDetailsById ? this.hotelDetailsById.hotelName : '', [Validators.required, Validators.minLength(5)]],
       hotelContact: ['', [Validators.required, Validators.pattern("[0-9]*$"), Validators.maxLength(10)]],
       HotelAddress: ['', [Validators.required]],
       pancard: ['', [Validators.required, Validators.pattern('([A-Z]){5}([0-9]){4}([A-Z]){1}$')]],
@@ -43,10 +57,10 @@ export class HotelRegistrationComponent {
 
   submit() {
     console.log(this.hotelRegistrationForm.value);
-   this.dataServiceService.postApiCall('hotelDetails',this.hotelRegistrationForm.value).subscribe();
+    this.dataServiceService.postApiCall(this.hotelEndPoint, this.hotelRegistrationForm.value).subscribe();
     // this.commonApicallService.postApiCall(this.getEndPoint, this.hotelRegistrationForm.value).subscribe(response => { })
     // this.commonApicallService.hotelDetailsList = 'hotelDetails';
-     this.router.navigateByUrl('/owner/loginSuccess');
+    this.router.navigateByUrl('/owner/loginSuccess');
   }
 
 
@@ -61,5 +75,5 @@ export class HotelRegistrationComponent {
     this.show = false;
   }
 
-  
+
 }

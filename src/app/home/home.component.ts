@@ -25,9 +25,10 @@ export class HomeComponent {
     else{
       this.router.navigateByUrl('/user')
     }
-
-
-
   }
 
+//   city(){
+//  console.log(' this.cities', this.cities);
+   
+//   }
 }

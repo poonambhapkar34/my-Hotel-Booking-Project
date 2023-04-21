@@ -6,8 +6,8 @@
 <button mat-raised-button color="warn" (click)="viewAllHotelList()">View All Hotel List</button>
 </div>
 
-<div *ngIf="this.hotelDetailsByOwner">
-<ul *ngFor="let hotelData of this.hotelDetailsByOwner">
+<!-- <div >
+<ul >
     <li>{{hotelData.ownerName}}</li>
     <li>{{hotelData.hotelName}}</li>
     <li>{{hotelData.hotelAddress}}</li>
@@ -16,4 +16,34 @@
     <li>{{hotelData.roomAvailable}}</li>
     
 </ul>
+</div> -->
+
+<br>
+<br>
+<div *ngIf = "this.hotelDetailsByOwner.length !=0">
+    <div class="serach-bar-container">
+        <mat-form-field>
+            <mat-icon matPrefix>search</mat-icon>
+            <input matInput [(ngModel)]="inputBoxValue">
+        </mat-form-field>
+    </div>
+
+    <div class="table-container">
+
+        <table>
+            <tr>
+                <th *ngFor = "let heading of tableHeadings">{{heading}}</th>
+                
+            </tr>
+            <tr  *ngFor = "let hotelData of this.hotelDetailsByOwner| searchtext:inputBoxValue">
+                <td>{{hotelData.ownerName}}</td>
+                <td>{{hotelData.hotelName}}</td>
+                <td>{{hotelData.hotelAddress}}</td>
+                <td>{{hotelData.hotelMobile}}</td>
+                <td>{{hotelData.hotelMenu}}</td>
+                <td > <i class="material-icons" (click)="delete(hotelData.id)">delete</i></td>
+                <td> <i class="material-icons" (click)="edit(hotelData.id)">edit</i></td>
+            </tr>
+        </table>
+    </div>
 </div>

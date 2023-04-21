@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators  } from '@angular/forms';
 import { DataServiceService } from '../data-service.service';
 import { Router } from '@angular/router';
 
@@ -17,6 +17,12 @@ export class SignUpComponent {
   confirmPassword: any;
   confirmPasswordMatch: boolean = false;
   endPoint: any;
+  cities:any = [
+    {cityName:"Pune",selected : false},
+    {cityName:"Nashik",selected : false},
+    {cityName:"Satara",selected : false},
+    {cityName:"Kolhapur",selected : false}
+  ]
 constructor(private fb :FormBuilder ,
   private router : Router, private dataservice:DataServiceService){
  
@@ -26,6 +32,9 @@ ngOnInit(){
  this.endPoint = this.dataservice.endPoint;
   this.signUp();
   
+}
+get city1() {
+  return this.signUpForm.controls["cities1"] as FormArray;
 }
 signUp(){
   this.signUpForm = this.fb.group({
@@ -37,12 +46,29 @@ signUp(){
     TnC:   ['', [Validators.requiredTrue]],
     gender:[],
     email:['', [Validators.required]],
-    city:['',[Validators.required]]
+    city:['',[Validators.required]],
+    cities1: this.fb.array([])
 
   })
   
 }
+
+onChange(event:any,i:number){
+  const cities = (<FormArray>(
+    this.signUpForm.get("cities")
+  )) as FormArray;
+ console.log(event.checked , i);
+ if(event.checked){
+  cities.push(new FormControl(event.source.value));
+
+ }
+
+
+
+ 
+}
 submit(){
+  console.log('cities',this.cities);
   
   this.dataservice.postApiCall(this.endPoint,this.signUpForm.value).subscribe(response =>{})
   

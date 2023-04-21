@@ -6,9 +6,14 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatListModule} from '@angular/material/list';
+import { SearchtextPipe } from '../pipes/searchtext.pipe';
+
 @NgModule({
-  declarations: [],
+  declarations: [
+    SearchtextPipe
+  ],
   imports: [
     CommonModule,
     MatRadioModule,
@@ -17,7 +22,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatCheckboxModule,
     MatInputModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatListModule,
+    FormsModule
   ],
   exports:[
     MatRadioModule,
@@ -26,7 +33,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatCheckboxModule,
     MatInputModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatListModule,
+    FormsModule,
+    SearchtextPipe
   ]
 })
 export class SharedModule { }

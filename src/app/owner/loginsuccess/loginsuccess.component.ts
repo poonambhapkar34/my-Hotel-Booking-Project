@@ -12,7 +12,12 @@ export class LoginsuccessComponent {
   signInOrSignUp: any;
   ownerName: any;
   hotelDetails: any;
-  hotelDetailsByOwner: any = [];
+  hotelDetailsByOwner: any=[];
+ hotelEndPoint= 'hotelDetails';
+  inputBoxValue:any;
+  tableHeadings = ["Owner Name", "Hotel Name",
+  "Hotel Address", "Hotel Contact No", "Hotel Menu","Delete","Edit"];
+ 
  constructor(  private dataservice: DataServiceService,
   private router :Router){}
 
@@ -21,7 +26,8 @@ export class LoginsuccessComponent {
   this.endPoint = this.dataservice.endPoint;
   this.signInOrSignUp =  this.dataservice.signinOrSignUp;
   this.ownerName = this.dataservice.ownerName;
-  console.log('this.signInOrSignUp --',this.signInOrSignUp );
+ 
+  console.log('this.signInOrSignUp --',this.signInOrSignUp, this.ownerName ,this.endPoint);
  
   }
   back(){
@@ -33,8 +39,8 @@ export class LoginsuccessComponent {
     }
   }
   async viewMyHotelList(){
-
-  this.hotelDetails = await this.dataservice.getApiCall('hotelDetails').toPromise();
+  this. hotelDetailsByOwner = [];
+  this.hotelDetails = await this.dataservice.getApiCall(this.hotelEndPoint).toPromise();
   console.log(" this.hotelDetails ", this.hotelDetails );
   
   if(this.hotelDetails){
@@ -42,12 +48,12 @@ export class LoginsuccessComponent {
       let name = element.ownerName?.toLowerCase();
       console.log(name);
       let signInName = this.ownerName?.toLowerCase() ;
-      if(name==signInName ){
+      if(name == signInName ){
         this.hotelDetailsByOwner.push(element);
       }
     });
     console.log('this.hotelDetailsByOwner',this.hotelDetailsByOwner);
-    if(this.hotelDetailsByOwner <= 0){
+    if(this.hotelDetailsByOwner.length == 0){
       alert('Hotels Not found....')
     }
   }
@@ -56,6 +62,15 @@ export class LoginsuccessComponent {
     }
 
    viewAllHotelList(){
-   this.router.navigateByUrl('/hotelDetails')
+   this.router.navigateByUrl('/hotelDetails');
+  }
+  async delete(id:number){
+    await this.dataservice.deleteApiCall(this.hotelEndPoint, id).toPromise();
+    this.viewMyHotelList();
+  }
+  edit(id:number){
+    this.dataservice.editId = id;
+    this.dataservice.editJourney = true;
+    this.router.navigateByUrl('/owner/hotelRegistration');
   }
 }

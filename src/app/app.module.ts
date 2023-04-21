@@ -17,7 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../../src/app/shared/shared.module';
 import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
-import { SearchtextPipe } from './pipes/searchtext.pipe';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { SearchtextPipe } from './pipes/searchtext.pipe';
     SignInComponent,
     SignUpComponent,
     HotelDetailsComponent,
-    SearchtextPipe
+   
   ],
   imports: [
     BrowserModule,

@@ -5,3 +5,23 @@ div.btns button{
     position: relative;
     top: 30px;
 }
+table,th,tr,td{
+    border: 1px solid rgb(245, 8, 8);
+    background-color: antiquewhite;
+    text-align: center;
+    border-collapse: collapse;
+    margin: auto;
+    padding: 10px 10px;;
+
+}
+.table-container {
+    position: relative;
+    top:60px;
+    cursor: pointer;
+}
+.serach-bar-container{
+    margin: auto;
+    text-align: center;
+    position: relative;
+    top:30px;
+}

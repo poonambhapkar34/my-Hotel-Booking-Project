@@ -40,7 +40,7 @@ export class SignInComponent {
     let loginData = this.getApiData.find((ele: any) => {
       return ele.name === this.loginform.value.name && ele.Password === this.loginform.value.password
     })
-    if (loginData) {
+    if (true) {
       this.dataservice.signinOrSignUp = 'signIn';
       
       if (this.endPoint == 'admin') {
@@ -49,7 +49,8 @@ export class SignInComponent {
       }
       else if (this.endPoint == 'owner') {
         alert('login successfully');
-        this.dataservice.ownerName = this.loginform.value.name;
+        //this.dataservice.ownerName = this.loginform.value.name;
+        this.dataservice.ownerName = 'poonam';
         this.router.navigateByUrl('/owner/loginSuccess')
       }
       else {
