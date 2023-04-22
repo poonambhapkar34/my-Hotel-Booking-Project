@@ -7,15 +7,16 @@ import { Injectable } from '@angular/core';
 export class DataServiceService {
 
   url = 'http://localhost:3000/';
-  //endPoint: any;
-  endPoint = 'owner';
+  endPoint: any;
+  //endPoint = 'owner';
 
   Data: any;
   signinOrSignUp: any;
- // ownerName: any;
-  ownerName = 'poonam';
+  ownerName: any;
+ // ownerName = 'santosh';
   editId!: number;
   editJourney: boolean = false;
+  hotelDetailsById: any;
   constructor(private http: HttpClient) {
   }
 
@@ -25,7 +26,7 @@ export class DataServiceService {
   }
 
   getApiCall(endPoint: any, id?:any) {
-    let updateUrl = id ?this.url + endPoint + '/' + id : this.url + endPoint;
+    let updateUrl = id ? this.url + endPoint + '/' + id : this.url + endPoint;
     return this.http.get(updateUrl);
   }
 

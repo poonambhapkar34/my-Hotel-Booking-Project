@@ -36,11 +36,13 @@
                 
             </tr>
             <tr  *ngFor = "let hotelData of this.hotelDetailsByOwner| searchtext:inputBoxValue">
-                <td>{{hotelData.ownerName}}</td>
                 <td>{{hotelData.hotelName}}</td>
+                <td>{{hotelData.ownerName}}</td>
+                <td>{{hotelData.hotelContactNo}}</td>
                 <td>{{hotelData.hotelAddress}}</td>
-                <td>{{hotelData.hotelMobile}}</td>
-                <td>{{hotelData.hotelMenu}}</td>
+                <td>{{hotelData.hotelEmail}}</td>
+                <td>{{hotelData.totalRooms}}</td>
+                <td>{{hotelData.speciality}}</td>
                 <td > <i class="material-icons" (click)="delete(hotelData.id)">delete</i></td>
                 <td> <i class="material-icons" (click)="edit(hotelData.id)">edit</i></td>
             </tr>

@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
 export class HotelDetailsComponent {
 
   hotelDetails: any;
-  tableHeadings = ["Owner Name", "Hotel Name", "Hotel Address", "Hotel Contact No", "Hotel Menu"];
+  tableHeadings = [ "Hotel Name", "Owner Name","Hotel Contact No",
+  "Hotel Address",  "Hotel Email", "Rooms", "Speciality"];
   endpoint!: string;
   hotelEndPoint = 'hotelDetails';
   inputBoxValue: any;

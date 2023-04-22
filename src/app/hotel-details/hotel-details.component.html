@@ -17,11 +17,14 @@
             <th *ngIf="endpoint=='admin'">Delete</th>
         </tr>
         <tr *ngFor="let hotelsData of hotelDetails | searchtext:inputBoxValue">
-            <td>{{hotelsData.ownerName}}</td>
             <td>{{hotelsData.hotelName}}</td>
+            <td>{{hotelsData.ownerName}}</td>
+            <td>{{hotelsData.hotelContactNo}}</td>
             <td>{{hotelsData.hotelAddress}}</td>
-            <td>{{hotelsData.hotelMobile}}</td>
-            <td>{{hotelsData.hotelMenu}}</td>
+            <td>{{hotelsData.hotelEmail}}</td>
+            <td>{{hotelsData.totalRooms}}</td>
+            <td>{{hotelsData.speciality}}</td>
+            
             <td *ngIf="endpoint=='admin'"> <i class="material-icons" (click)="delete(hotelsData.id)">delete</i></td>
            
         </tr>

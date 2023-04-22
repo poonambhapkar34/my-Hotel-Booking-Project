@@ -8,14 +8,15 @@ import { DataServiceService } from 'src/app/data-service.service';
   styleUrls: ['./hotel-registration.component.css']
 })
 export class HotelRegistrationComponent {
-  hotelRegistrationForm!: FormGroup;
+  hotelRegistrationForm! :FormGroup;
+   
   show: boolean = false;
   getEndPoint: any;
   isEditJourney!: boolean;
   editId!: number;
   hotelEndPoint = 'hotelDetails';
   hotelDetailsById: any;
-  constructor(private formBuilder: FormBuilder,
+  constructor(private fb: FormBuilder,
     private dataServiceService: DataServiceService,
     private router: Router) {
 
@@ -23,43 +24,51 @@ export class HotelRegistrationComponent {
   ngOnInit() {
     this.isEditJourney = this.dataServiceService.editJourney;
     this.editId = this.dataServiceService.editId;
+    this.hotelDetailsById = this.dataServiceService.hotelDetailsById ;
+   
     if (this.isEditJourney) {
-      this.getHotelDetailsById();
+      console.log(' this.hotelDetailsById', this.hotelDetailsById);
+      if(this.hotelDetailsById){
+        this.hotelRegistration();
+      }
+     
     }
-    this.hotelRegistration();
+   else{
+    this.hotelRegistration()
+   }
   }
+ 
+  //  async getHotelDetailsById() {
+  //   this.hotelDetailsById =  await this.dataServiceService.getApiCall(this.hotelEndPoint, this.editId).toPromise();
+  
+  // }
 
-  async getHotelDetailsById() {
-    this.hotelDetailsById = await this.dataServiceService.getApiCall(this.hotelEndPoint, this.editId).toPromise();
-console.log(' this.hotelDetailsById', this.hotelDetailsById);
+  hotelRegistration(){
 
-  }
+    this.hotelRegistrationForm = this.fb.group({
 
-  hotelRegistration() {
-    this.hotelRegistrationForm = this.formBuilder.group({
-      ownerName: [this.hotelDetailsById ? this.hotelDetailsById.ownerName : '', [Validators.required, Validators.minLength(5)]],
-      typeOfApplicant: [''],
-      hotelName: [this.hotelDetailsById ? this.hotelDetailsById.hotelName : '', [Validators.required, Validators.minLength(5)]],
-      hotelContact: ['', [Validators.required, Validators.pattern("[0-9]*$"), Validators.maxLength(10)]],
-      HotelAddress: ['', [Validators.required]],
-      pancard: ['', [Validators.required, Validators.pattern('([A-Z]){5}([0-9]){4}([A-Z]){1}$')]],
-      city: ['', [Validators.required]],
-      starRating: ['', [Validators.required]],
-      hotelAsso: [''],
-      hotelAssoList: ['select',],
-      numberOfRooms: ['', [Validators.required, Validators.pattern("[0-9]*$")]],
-      noOfEmployes: ['', [Validators.required, Validators.pattern("[0-9]*$")]],
-      acceptTerms: [false, Validators.requiredTrue],
-
-    })
+    hotelName:[this.hotelDetailsById ? this.hotelDetailsById?.hotelName : '',[Validators.required, Validators.pattern(('[a-zA-Z ]*$')),Validators.minLength(2)]],
+    ownerName:[this.hotelDetailsById ? this.hotelDetailsById?.ownerName : '',[Validators.required,Validators.pattern('[a-zA-Z ]*$'),Validators.minLength(2)]],
+    hotelContactNo:[this.hotelDetailsById ? this.hotelDetailsById?.hotelContactNo  : '',[Validators.required, Validators.pattern('[0-9]*$'),Validators.minLength(10),Validators.maxLength(10)]],
+    hotelAddress:[this.hotelDetailsById ? this.hotelDetailsById?.hotelAddress : '',[Validators.required]],
+    hotelEmail:[this.hotelDetailsById ? this.hotelDetailsById?.hotelEmail : '', [Validators.required]], 
+    totalRooms:[this.hotelDetailsById ? this.hotelDetailsById?.totalRooms :'',[Validators.required]],
+    speciality:[this.hotelDetailsById ? this.hotelDetailsById?.speciality :'']
+    
+  
+   })
   }
 
 
   submit() {
-    console.log(this.hotelRegistrationForm.value);
-    this.dataServiceService.postApiCall(this.hotelEndPoint, this.hotelRegistrationForm.value).subscribe();
-    // this.commonApicallService.postApiCall(this.getEndPoint, this.hotelRegistrationForm.value).subscribe(response => { })
-    // this.commonApicallService.hotelDetailsList = 'hotelDetails';
+      console.log(this.hotelRegistrationForm.value);
+    if(this.isEditJourney){
+    //put/patch pi  
+    }
+    else{
+      this.dataServiceService.postApiCall(this.hotelEndPoint, this.hotelRegistrationForm.value).subscribe();
+    }
+    
     this.router.navigateByUrl('/owner/loginSuccess');
   }
 

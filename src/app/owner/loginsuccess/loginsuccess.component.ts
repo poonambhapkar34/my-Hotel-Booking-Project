@@ -15,8 +15,9 @@ export class LoginsuccessComponent {
   hotelDetailsByOwner: any=[];
  hotelEndPoint= 'hotelDetails';
   inputBoxValue:any;
-  tableHeadings = ["Owner Name", "Hotel Name",
-  "Hotel Address", "Hotel Contact No", "Hotel Menu","Delete","Edit"];
+  tableHeadings =  [ "Hotel Name", "Owner Name","Hotel Contact No",
+  "Hotel Address",  "Hotel Email", "Rooms", "Speciality","Delete","Edit"];
+  hotelDetailsById: any;
  
  constructor(  private dataservice: DataServiceService,
   private router :Router){}
@@ -39,11 +40,13 @@ export class LoginsuccessComponent {
     }
   }
   async viewMyHotelList(){
-  this. hotelDetailsByOwner = [];
+
+ 
   this.hotelDetails = await this.dataservice.getApiCall(this.hotelEndPoint).toPromise();
   console.log(" this.hotelDetails ", this.hotelDetails );
   
   if(this.hotelDetails){
+    this. hotelDetailsByOwner = [];
     this.hotelDetails.forEach((element:any) => {
       let name = element.ownerName?.toLowerCase();
       console.log(name);
@@ -68,9 +71,13 @@ export class LoginsuccessComponent {
     await this.dataservice.deleteApiCall(this.hotelEndPoint, id).toPromise();
     this.viewMyHotelList();
   }
-  edit(id:number){
+  async edit(id:number){
     this.dataservice.editId = id;
     this.dataservice.editJourney = true;
-    this.router.navigateByUrl('/owner/hotelRegistration');
+   
+   this.hotelDetailsById =  await this.dataservice.getApiCall(this.hotelEndPoint, id).toPromise();
+     console.log('  this.hotelDetailsById-->',  this.hotelDetailsById);
+     this.dataservice.hotelDetailsById =  this.hotelDetailsById ;
+     this.router.navigateByUrl('/owner/hotelRegistration');
   }
 }
