@@ -168,7 +168,20 @@
       "id": 5
     }
   ],
-  "user": [],
+  "user": [
+    {
+      "name": "poonam",
+      "mobile": "9898989999",
+      "Password": "Poonam344",
+      "confirmPassword": "Poonam344",
+      "TnC": true,
+      "gender": "female",
+      "email": "poonam@gmail.com",
+      "city": "pune",
+      "cities1": [],
+      "id": 1
+    }
+  ],
   "hotelDetails": [
     {
       "hotelName": "hotel Manthon",

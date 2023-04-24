@@ -15,6 +15,7 @@
         <tr>
             <th *ngFor="let heading of tableHeadings">{{heading}}</th>
             <th *ngIf="endpoint=='admin'">Delete</th>
+            <th *ngIf = "endpoint!='admin'">Book Now</th>
         </tr>
         <tr *ngFor="let hotelsData of hotelDetails | searchtext:inputBoxValue">
             <td>{{hotelsData.hotelName}}</td>
@@ -24,9 +25,9 @@
             <td>{{hotelsData.hotelEmail}}</td>
             <td>{{hotelsData.totalRooms}}</td>
             <td>{{hotelsData.speciality}}</td>
-            
-            <td *ngIf="endpoint=='admin'"> <i class="material-icons" (click)="delete(hotelsData.id)">delete</i></td>
-           
+            <td *ngIf = "endpoint=='admin'"> <i class="material-icons" (click)="delete(hotelsData.id)">delete</i></td>
+           <button *ngIf = "endpoint == 'owner' || 'user'" (click)="bokNow()">Book Now</button>
+           <!-- <button *ngIf = "endpoint != 'admin'">Book Now</button> -->
         </tr>
     </table>
 </div>

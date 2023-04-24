@@ -10,7 +10,6 @@ import { DataServiceService } from '../data-service.service';
 })
 export class SignInComponent {
   loginform!: FormGroup;
-  // endPoint:any;
   getApiData: any;
   endPoint : any;
 
@@ -40,7 +39,7 @@ export class SignInComponent {
     let loginData = this.getApiData.find((ele: any) => {
       return ele.name === this.loginform.value.name && ele.Password === this.loginform.value.password
     })
-    if (true) {
+    if (loginData) {
       this.dataservice.signinOrSignUp = 'signIn';
       
       if (this.endPoint == 'admin') {
@@ -61,7 +60,6 @@ export class SignInComponent {
       alert('User not Fount')
       this.loginform.reset();
       this.router.navigateByUrl('/signIn');
-
     }
   }
   back(){

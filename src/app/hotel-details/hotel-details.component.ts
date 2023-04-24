@@ -45,4 +45,7 @@ export class HotelDetailsComponent {
       this.router.navigateByUrl('/owner/loginSuccess');
     }
   }
+  bokNow(){
+    this.router.navigateByUrl('/user/bookNow');
+  }
 }

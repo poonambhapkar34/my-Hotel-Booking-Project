@@ -89,10 +89,10 @@ redirect to signIn
 
 
 user journey:
-redirect to the userLandingcompo : signIn view_Hotel_List
-signUp submit : post Api --url enpoint /user --> redirect userSuccessCompo .
-userSuccessCompo : view_Hotel_List --> redirect to userHotelListCompo .
-userHotelListCompo :  view_Hotel_List btn click --> get Api call / hotelDetails.
+redirect to the userLandingcompo : signIn 
+signUp submit : post Api --url enpoint /user --> redirect loginSuccessCompo .
+logginSuccessCompo : view_Hotel_List --> redirect to userHotelListCompo .
+HotelListCompo :  view_Hotel_List btn click --> get Api call / hotelDetails.
 show hotel details in table format, (u can add search box).and add one column of book now option --> redirect user to bookNowCompo.
 bookNowCompo : form-- userName, add, mobNo, amount , pass submit --> post Api endpoint/hotelBooking.
 
