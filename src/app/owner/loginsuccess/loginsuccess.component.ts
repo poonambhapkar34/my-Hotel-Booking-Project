@@ -80,4 +80,8 @@ export class LoginsuccessComponent {
      this.dataservice.hotelDetailsById =  this.hotelDetailsById ;
      this.router.navigateByUrl('/owner/hotelRegistration');
   }
+  newHotelRegister(){
+    this.dataservice.editJourney = false;
+    this.router.navigateByUrl('/owner/hotelRegistration');
+  }
 }

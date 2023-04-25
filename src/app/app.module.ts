@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../../src/app/shared/shared.module';
 import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
+import { BooknowComponent } from './booknow/booknow.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
     SignInComponent,
     SignUpComponent,
     HotelDetailsComponent,
+    BooknowComponent,
    
   ],
   imports: [

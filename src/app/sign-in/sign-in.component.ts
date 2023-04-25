@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataServiceService } from '../data-service.service';
-
+import {MatSnackBar,  MatSnackBarHorizontalPosition,
+  MatSnackBarVerticalPosition,} from '@angular/material/snack-bar';
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
@@ -12,11 +13,12 @@ export class SignInComponent {
   loginform!: FormGroup;
   getApiData: any;
   endPoint : any;
-
-
+  horizontalPosition : MatSnackBarHorizontalPosition= 'start';
+  verticalPosition : MatSnackBarVerticalPosition = 'bottom'
 
   constructor(private fb: FormBuilder,
-     private dataservice: DataServiceService, private router: Router) {
+     private dataservice: DataServiceService, private router: Router,
+     private snackBar: MatSnackBar) {
 
   }
   ngOnInit() {
@@ -43,7 +45,10 @@ export class SignInComponent {
       this.dataservice.signinOrSignUp = 'signIn';
       
       if (this.endPoint == 'admin') {
-        alert('login successfully');
+       // alert('login successfully');
+       this.snackBar.open('Login successfully','Close' , {
+        panelClass: ['.snakBarcss']
+      });
         this.router.navigateByUrl('/admin/loginSuccess')
       }
       else if (this.endPoint == 'owner') {

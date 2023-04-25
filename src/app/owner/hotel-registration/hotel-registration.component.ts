@@ -22,6 +22,7 @@ export class HotelRegistrationComponent {
 
   }
   ngOnInit() {
+    
     this.isEditJourney = this.dataServiceService.editJourney;
     this.editId = this.dataServiceService.editId;
     this.hotelDetailsById = this.dataServiceService.hotelDetailsById ;

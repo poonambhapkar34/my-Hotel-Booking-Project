@@ -9,6 +9,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatListModule} from '@angular/material/list';
 import { SearchtextPipe } from '../pipes/searchtext.pipe';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SearchtextPipe } from '../pipes/searchtext.pipe';
     MatSelectModule,
     ReactiveFormsModule,
     MatListModule,
-    FormsModule
+    FormsModule,
+    MatSnackBarModule
   ],
   exports:[
     MatRadioModule,
@@ -36,7 +38,8 @@ import { SearchtextPipe } from '../pipes/searchtext.pipe';
     ReactiveFormsModule,
     MatListModule,
     FormsModule,
-    SearchtextPipe
+    SearchtextPipe,
+    MatSnackBarModule
   ]
 })
 export class SharedModule { }

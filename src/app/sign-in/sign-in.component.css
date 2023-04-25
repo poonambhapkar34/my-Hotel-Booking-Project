@@ -14,3 +14,28 @@ mat-form-field {
 mat-raised-button {
     width: 80%;
 }
+.my-custom-snackbar {
+    margin: 0 !important;
+    position: absolute;
+    right: 25px;
+    bottom:100px;
+  }
+
+  /* .cdk-overlay-container .cdk-global-overlay-wrapper .cdk-overlay-pane{
+    margin-bottom: 500px
+  }
+  mat-snack-bar-container.mdc-snackbar.mat-mdc-snack-bar-container.mdc-snackbar--open.my-custom-snackbar{
+    top:100px;
+    position: absolute;
+  }
+  .snakBarcss{
+    bottom:100px;
+  }
+  .mdc-snackbar__surface.ng-tns-c15-2{
+    bottom:100px;
+    position: absolute;
+  } */
+  .snakBarcss{
+    bottom:100px;
+    position: absolute;
+  }
