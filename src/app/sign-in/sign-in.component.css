@@ -35,7 +35,17 @@ mat-raised-button {
     bottom:100px;
     position: absolute;
   } */
-  .snakBarcss{
-    bottom:100px;
+  .snakBarcss
+    .mat-dialog-container {
+      bottom:100px;
+     position: absolute;
+  }
+  /* .mat-mdc-snack-bar-container {
+    margin: 8px;
     position: absolute;
+    top: 100px;
+  } */
+  .custom-snackbar {
+    background-color: #e61414;
+    color: #fff;
   }

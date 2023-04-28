@@ -10,7 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatListModule} from '@angular/material/list';
 import { SearchtextPipe } from '../pipes/searchtext.pipe';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [
     SearchtextPipe
@@ -26,7 +26,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     ReactiveFormsModule,
     MatListModule,
     FormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule,
+   
   ],
   exports:[
     MatRadioModule,
@@ -39,7 +41,15 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatListModule,
     FormsModule,
     SearchtextPipe,
-    MatSnackBarModule
-  ]
+    MatSnackBarModule,
+    MatDialogModule
+  ],
+  providers: [
+    // {
+    //   provide: MatDialogRef,
+     
+    // },
+   
+ ],
 })
 export class SharedModule { }

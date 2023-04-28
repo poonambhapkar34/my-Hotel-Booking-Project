@@ -1,2 +1,10 @@
 <button mat-raised-button color="warn" (click)="back()">Back</button>
 <button mat-raised-button color="warn" (click)="viewHotelList()">View Hotel List</button>
+<form [formGroup]="formdata">
+    <label>Vehicles</label><br>
+    <mat-radio-group formControlName="vehicles">
+       <mat-checkbox *ngFor="let vehicle of Vehicles"  (change)="setVehicles($event,vehicle.option )">{{ vehicle.option }}</mat-checkbox>
+    </mat-radio-group>
+
+    <button (click)="submit()">Submit</button>
+ </form>

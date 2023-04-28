@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataServiceService } from '../data-service.service';
 import {MatSnackBar,  MatSnackBarHorizontalPosition,
-  MatSnackBarVerticalPosition,} from '@angular/material/snack-bar';
+  MatSnackBarVerticalPosition,MatSnackBarConfig} from '@angular/material/snack-bar';
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
@@ -46,9 +46,9 @@ export class SignInComponent {
       
       if (this.endPoint == 'admin') {
        // alert('login successfully');
-       this.snackBar.open('Login successfully','Close' , {
-        panelClass: ['.snakBarcss']
-      });
+       const panelCss = new MatSnackBarConfig();
+       panelCss.verticalPosition = 'top';
+       this.snackBar.open('Login successfully','Close' , panelCss);
         this.router.navigateByUrl('/admin/loginSuccess')
       }
       else if (this.endPoint == 'owner') {

@@ -18,6 +18,8 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../../src/app/shared/shared.module';
 import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
 import { BooknowComponent } from './booknow/booknow.component';
+import { CustomSnackbarComponent } from './custom-snackbar/custom-snackbar.component';
+//import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -28,6 +30,7 @@ import { BooknowComponent } from './booknow/booknow.component';
     SignUpComponent,
     HotelDetailsComponent,
     BooknowComponent,
+    CustomSnackbarComponent,
    
   ],
   imports: [
@@ -43,7 +46,8 @@ import { BooknowComponent } from './booknow/booknow.component';
     ReactiveFormsModule,
    // MatIconModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+   // MatDialogModule
     
   ],
   providers: [],

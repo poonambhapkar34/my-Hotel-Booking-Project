@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { DataServiceService } from '../data-service.service';
 import { Router } from '@angular/router';
-
+import {MatDialog} from '@angular/material/dialog';
+import { CustomSnackbarComponent } from '../custom-snackbar/custom-snackbar.component';
 @Component({
   selector: 'app-hotel-details',
   templateUrl: './hotel-details.component.html',
@@ -17,6 +18,7 @@ export class HotelDetailsComponent {
   inputBoxValue: any;
 
   constructor(private dataservice: DataServiceService,
+    public dialog: MatDialog,
     private router: Router
   ) { }
 
@@ -31,8 +33,13 @@ export class HotelDetailsComponent {
   }
 
   async delete(id: number) {
-    await this.dataservice.deleteApiCall(this.hotelEndPoint, id).toPromise();
-    this.getHotelDetails();
+    // await this.dataservice.deleteApiCall(this.hotelEndPoint, id).toPromise();
+    // this.getHotelDetails();
+    this.dialog.open(CustomSnackbarComponent, {
+      minWidth: '200px',
+      height:'100px',
+     
+    })
   }
   back() {
     if (this.endpoint == 'admin') {

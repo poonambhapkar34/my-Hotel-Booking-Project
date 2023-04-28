@@ -7,13 +7,13 @@ import { Injectable } from '@angular/core';
 export class DataServiceService {
 
   url = 'http://localhost:3000/';
-  endPoint: any;
-  //endPoint = 'owner';
+ // endPoint: any;
+  endPoint = 'admin';
 
   Data: any;
   signinOrSignUp: any;
-  ownerName: any;
- // ownerName = 'santosh';
+  //ownerName: any;
+  ownerName = 'santosh';
   editId!: number;
   editJourney: boolean = false;
   hotelDetailsById: any;
