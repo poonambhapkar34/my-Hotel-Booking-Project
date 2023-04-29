@@ -1,10 +1,23 @@
 <button mat-raised-button color="warn" (click)="back()">Back</button>
 <button mat-raised-button color="warn" (click)="viewHotelList()">View Hotel List</button>
 <form [formGroup]="formdata">
-    <label>Vehicles</label><br>
-    <mat-radio-group formControlName="vehicles">
-       <mat-checkbox *ngFor="let vehicle of Vehicles"  (change)="setVehicles($event,vehicle.option )">{{ vehicle.option }}</mat-checkbox>
-    </mat-radio-group>
+   <br>
+   <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput type="text" formControlName="name">
+   </mat-form-field>
+   <br>
 
-    <button (click)="submit()">Submit</button>
- </form>
+   <label>Vehicles</label><br>
+   <mat-radio-group formControlName="vehicles">
+      <mat-checkbox *ngFor="let vehicle of Vehicles" 
+      (change)="setVehicles($event,vehicle.option )" [checked]="vehicle.isActive" 
+      [value]="vehicle.value">{{vehicle.option}}</mat-checkbox>
+   </mat-radio-group>
+   <br>
+   <!-- <mat-form-field> -->
+   <mat-checkbox formControlName="TC" value="terms and conditions" (change)="tcValue($event)">terms and
+      conditions</mat-checkbox>
+   <!-- </mat-form-field> -->
+   <button (click)="submit()">Submit</button>
+</form>

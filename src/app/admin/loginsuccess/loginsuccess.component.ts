@@ -12,26 +12,63 @@ export class LoginsuccessComponent {
   signInOrSignUp: any;
   Vehicles = [
     { value: "2 wheelers", option: "2 wheelers", isActive: false },
-    { value: "4 wheelers", option: "4 wheelers", isActive: false }
+    { value: "4 wheelers", option: "4 wheelers", isActive: false },
+    { value: "3 wheelers", option: "3 wheelers", isActive: false }
   ];
   formdata!: FormGroup;
-
+  tandc: any;
+  editData: any;
+  Edit = true;
 
 
   constructor(private dataservice: DataServiceService, private fb: FormBuilder,
     private router: Router) { }
 
   ngOnInit() {
-    this.formdata = this.fb.group({
-      vehicles: ''
-    });
+    if(this.Edit){
+      this.editData = {
+        "TC": 
+        "terms and conditions",
+        "name": "kk",
+        "vehicles":  ['2 wheelers', '4 wheelers']
+      }
+      this.setVehicleCheboxes()
+      this.form();
+    }
+    else{
+      console.log('this.editData',this.editData);
+      
+      this.form();
+    }
+ 
     this.endPoint = this.dataservice.endPoint;
     console.log('this.signInOrSignUp --', this.signInOrSignUp);
+  }
+
+  setVehicleCheboxes(){
+    this.Vehicles.forEach(item=>{
+         this.editData.vehicles.forEach((arrayItem:any)=>{
+        if(item.value == arrayItem){
+          item.isActive = true;
+        }
+      }
+      )
+    })
+  }
+
+  form(){
+    this.formdata = this.fb.group({
+      name:[this.editData?.name ? this.editData?.name : '' ],
+      vehicles: [''],
+      TC:[this.editData?.TC ? true :false]
+      //TC:[this.editdData.TC? true :false]
+    });
   }
 
   viewHotelList() {
     this.router.navigateByUrl('/hotelDetails');
   }
+
   back() {
     this.signInOrSignUp = this.dataservice.signinOrSignUp;
     if (this.signInOrSignUp == 'signIn') {
@@ -41,9 +78,10 @@ export class LoginsuccessComponent {
       this.router.navigateByUrl('/signUp')
     }
   }
+
   setVehicles(event: any, value: string) {
     console.log(event);
-    console.log('value', value);
+    console.log('value', event.source.value);
 
     if (event.checked) {
       this.Vehicles.forEach(item => {
@@ -62,8 +100,9 @@ export class LoginsuccessComponent {
 
     console.log('Vehicles', this.Vehicles);
 
-    this.setValuesForForm()
+   
   }
+  
   setValuesForForm() {
     let vehicleData: any = [];
     this.Vehicles.forEach(item => {
@@ -71,8 +110,11 @@ export class LoginsuccessComponent {
         vehicleData.push(item.value)
       }
     })
+
     let updatedVehicles = {
-      vehicles: vehicleData
+      name: this.formdata.value.name,
+      vehicles: vehicleData,
+      TC: this.tandc
     }
     this.formdata.setValue(updatedVehicles);
 
@@ -80,8 +122,13 @@ export class LoginsuccessComponent {
 
   }
 
-  submit() {
+  tcValue(event:any){
+  console.log(event.source.value);
+  this.tandc = event.source.value;
 
+  }
+  submit() {
+    this.setValuesForForm()
     console.log(this.formdata.value);
 
   }
